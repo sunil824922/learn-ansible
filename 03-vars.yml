@@ -34,5 +34,7 @@
 
 - name: Variable from roles
   hosts: all
+  vars:
+    URl_PLAY: play.example.com
   roles:
     - sample
