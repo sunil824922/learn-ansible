@@ -10,7 +10,7 @@
 
 - name: Load vars from a file
   hosts: all
-  vars_file:
+  vars_files:
     - exvars.yml
 
   tasks:
