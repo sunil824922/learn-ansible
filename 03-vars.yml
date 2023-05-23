@@ -30,3 +30,9 @@
         msg: URL - {{ URL }}
       vars:
         URL: Play.example.com
+
+
+- name: Variable from roles
+  hosts: all
+  roles:
+    - sample
