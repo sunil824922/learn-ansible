@@ -22,19 +22,33 @@
 
 
 
-- name: Demo on Play Level Variable
+- name: Demo on Task Level Variables
   hosts: all
   tasks:
     - name: Print URL
       ansible.builtin.debug:
         msg: URL - {{ URL }}
       vars:
-        URL: Play.example.com
+        URL: tasks.example.com
 
 
-- name: Variable from roles
+
+
+- name: Variable from Roles
   hosts: all
   vars:
-    URl_PLAY: play.example.com
+    URL_PLAY: play.example.com
   roles:
     - sample
+
+
+- name: Demo on register variables
+  hosts: all
+  tasks:
+    - name: Run Uptime shell command
+      ansible.builtin.shell: uptime
+      register: output
+    - name: Print output
+      ansible.builtin.debug:
+        msg: "{{ output }}"
+
