@@ -50,5 +50,5 @@
       register: output
     - name: Print output
       ansible.builtin.debug:
-        msg: "{{ output }}"
+        msg: "{{ output.stdout }}"
 
